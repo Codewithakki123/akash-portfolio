@@ -121,7 +121,7 @@ export default function App() {
         <h2>Contact</h2>
         <p>Open to entry-level developer roles and happy to talk about any of the above.</p>
         <div className="contact-list">
-          <a href="mailto:your-email@example.com">your-email@example.com</a>
+          <a href="mailto:your-atripa7905@gmail.com">your-atripa7905@gmail.com</a>
           <a href="https://linkedin.com/in/akash-tripathi" target="_blank" rel="noreferrer">linkedin.com/in/akash-tripathi</a>
           <a href="https://github.com/your-username" target="_blank" rel="noreferrer">github.com/your-username</a>
         </div>
