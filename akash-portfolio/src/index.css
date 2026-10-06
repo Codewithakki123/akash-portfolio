@@ -1,0 +1,186 @@
+:root {
+  --bg: #FAFAF8;
+  --bg-alt: #EFEDE6;
+  --ink: #1B1D1F;
+  --ink-muted: #5B5F66;
+  --line: #DCD9CF;
+  --blue: #2451B4;
+  --amber: #C4841D;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / Nav ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+}
+.topbar .mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+.topbar nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-left: 22px;
+}
+.topbar nav a:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 56px 0 64px;
+  opacity: 0;
+  animation: rise 0.7s ease-out forwards;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero { animation: none; opacity: 1; }
+}
+.hero .role {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.08;
+  margin: 0 0 18px;
+  letter-spacing: -0.015em;
+}
+.hero p.lede {
+  max-width: 58ch;
+  font-size: 1.08rem;
+  color: var(--ink-muted);
+  margin: 0 0 28px;
+}
+.hero .cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 6px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { background: var(--blue); }
+.btn-outline { border-color: var(--line); color: var(--ink); }
+.btn-outline:hover { border-color: var(--ink); }
+
+/* ---------- Section shell ---------- */
+section { padding: 52px 0; border-top: 1px solid var(--line); }
+section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- About ---------- */
+.about p { max-width: 62ch; color: var(--ink); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+.fact dt {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+.fact dd { margin: 0; font-weight: 500; }
+@media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Skills ---------- */
+.skill-groups { display: flex; flex-direction: column; gap: 20px; }
+.skill-group .label {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  width: 130px;
+  flex-shrink: 0;
+}
+.skill-group { display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+.chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  border: 1px solid var(--line);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-size: 0.86rem;
+  background: var(--bg-alt);
+}
+
+/* ---------- Projects ---------- */
+.project {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.project:last-child { border-bottom: none; }
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.project-head h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0;
+}
+.project-links a { font-size: 0.88rem; margin-left: 14px; white-space: nowrap; }
+.project .stack {
+  color: var(--amber);
+  font-size: 0.84rem;
+  margin: 6px 0 10px;
+}
+.project p.desc { color: var(--ink-muted); margin: 0; max-width: 62ch; }
+
+/* ---------- Contact ---------- */
+.contact p { color: var(--ink-muted); max-width: 52ch; }
+.contact-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.contact-list a { font-weight: 500; text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
+
+footer {
+  padding: 32px 0 48px;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
